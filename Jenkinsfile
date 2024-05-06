@@ -1,39 +1,13 @@
 pipeline {
-    agent any
-    
-    stages {
+  agent any
 
-        stage('Build') {
-            steps {
-                // Install dependencies
-                sh 'npm install'
-            }
-        }
-        
-        stage('Package') {
-            steps {
-                // Run tests if needed
-                // sh 'npm test'
+  tools {nodejs "nodejs"}
 
-                // Package application using pkg
-                sh 'npm install -g pkg'
-                sh 'pkg .'
-            }
-            
-            post {
-                success {
-                    // Archive the packaged executable
-                    archiveArtifacts artifacts: '*.exe', fingerprint: true
-                }
-            }
-        }
+  stages {
+    stage('Example') {
+      steps {
+        sh 'npm config ls'
+      }
     }
-    
-    // Add post-build actions if needed
-    post {
-        always {
-            // Clean up
-            cleanWs()
-        }
-    }
+  }
 }
