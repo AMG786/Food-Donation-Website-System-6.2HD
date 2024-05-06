@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                steps {
+                
                 // Install dependencies
                 sh 'npm install'
 
@@ -17,7 +17,7 @@ pipeline {
                     archiveArtifacts artifacts: '**/your_artifact.*', fingerprint: true
                 }
             }
-            }
+            
         }
         stage('Test') {
             steps {
