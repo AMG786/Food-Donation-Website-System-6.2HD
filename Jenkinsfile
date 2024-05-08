@@ -14,12 +14,6 @@ pipeline {
                 // Build your code and create a build artifact
                 sh 'npm run build'
             }
-            post {
-                success {
-                   // Archive build artifact
-                    archiveArtifacts artifacts: '**/your_artifact.*', fingerprint: true
-                }
-            }
         }
         stage('Test') {
             steps {
