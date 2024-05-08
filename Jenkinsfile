@@ -9,10 +9,10 @@ pipeline {
             steps {
                 // Placeholder steps for Build stage
                  // Install dependencies
-                sh 'npm install'
+                sh 'node --version'
 
                 // Build your code and create a build artifact
-                sh 'npm run build'
+                sh 'npm --version'
             }
         }
         stage('Test') {
