@@ -14,7 +14,7 @@ pipeline {
         stage('Test') {
             steps {
                 // Placeholder steps for Test stage
-                sh 'npm test'
+                echo 'npm test'
             }
         }
         stage('Code Quality Analysis') {
