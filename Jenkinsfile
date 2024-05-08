@@ -8,12 +8,16 @@ pipeline {
         stage('Build') {
             steps {
                 // Placeholder steps for Build stage
-                echo 'Building the application...'
+                 // Install dependencies
+                sh 'npm install'
+
+                // Build your code and create a build artifact
+                sh 'npm run build'
             }
             post {
                 success {
-                    // Placeholder steps for successful Build stage
-                    echo 'Build successful'
+                   // Archive build artifact
+                    archiveArtifacts artifacts: '**/your_artifact.*', fingerprint: true
                 }
             }
         }
