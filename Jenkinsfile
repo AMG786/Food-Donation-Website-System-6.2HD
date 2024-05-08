@@ -8,8 +8,7 @@ pipeline {
         stage('Build') {
             steps {
                // Install dependencies
-                sh 'npm install'
-
+                sh 'npm install --save-dev'
                 // Build your code and create a build artifact
                 //sh 'npm run build'
             }
