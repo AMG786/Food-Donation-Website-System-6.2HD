@@ -1,54 +1,50 @@
 pipeline {
- agent any
- tools {nodejs "node"}
- 
+    agent any
+    tools {
+        nodejs "node"
+    }
+
     stages {
         stage('Build') {
-         steps {
-                // Install dependencies
-                sh 'npm install'
-
-                // Build your code and create a build artifact
-                sh 'npm run build'
+            steps {
+                // Placeholder steps for Build stage
+                echo 'Building the application...'
             }
             post {
                 success {
-                    // Archive build artifact
-                    archiveArtifacts artifacts: '**/your_artifact.*', fingerprint: true
+                    // Placeholder steps for successful Build stage
+                    echo 'Build successful'
                 }
             }
         }
         stage('Test') {
             steps {
-                // Run automated tests on your code
-                // Example: npm test for a Node.js application using Jest or Mocha
-                // Example: Running Selenium tests
+                // Placeholder steps for Test stage
+                echo 'Running tests...'
             }
         }
         stage('Code Quality Analysis') {
             steps {
-                // Run code quality analysis on your code
-                // Example: Running SonarQube analysis
-                // Example: Running CodeClimate analysis
+                // Placeholder steps for Code Quality Analysis stage
+                echo 'Running code quality analysis...'
             }
         }
         stage('Deploy') {
             steps {
-                // Deploy your application to a test environment
-                // Example: deploying to a staging server or Docker container
-                // Example: using Docker Compose or AWS Elastic Beanstalk for deployment
+                // Placeholder steps for Deploy stage
+                echo 'Deploying the application...'
             }
         }
         stage('Release') {
             steps {
-                // Promote the application to a production environment
-                // Example: using Octopus Deploy or AWS CodeDeploy for release management
+                // Placeholder steps for Release stage
+                echo 'Releasing the application...'
             }
         }
         stage('Monitoring and Alerting') {
             steps {
-                // Monitor the application in production for any issues and alert the team
-                // Example: Configuring Datadog or New Relic to monitor and alert
+                // Placeholder steps for Monitoring and Alerting stage
+                echo 'Setting up monitoring and alerting...'
             }
         }
     }
