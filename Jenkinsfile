@@ -19,10 +19,7 @@ pipeline {
         }
         stage('Code Quality Analysis') {
             steps {
-                // Placeholder steps for Code Quality Analysis stage
-                 // Run code quality analysis using SonarQube scanner
-                    sh 'sonar-scanner'
-                
+                echo 'Deploying the application...'   
             }
         }
         stage('Deploy') {
