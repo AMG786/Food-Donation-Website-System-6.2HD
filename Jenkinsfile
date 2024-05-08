@@ -11,6 +11,12 @@ pipeline {
                 sh 'npm install'
                 // Build your code and create a build artifact
                 sh 'node .'
+
+                // Terminate the pipeline
+                script {
+                    currentBuild.result = 'SUCCESS'
+                    error('Pipeline terminated after successful build and artifact creation')
+                }
             }
         }
         stage('Test') {
