@@ -7,12 +7,11 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                // Placeholder steps for Build stage
-                 // Install dependencies
-                sh 'node --version'
+               // Install dependencies
+                sh 'npm install'
 
                 // Build your code and create a build artifact
-                sh 'npm --version'
+                sh 'npm run build'
             }
         }
         stage('Test') {
