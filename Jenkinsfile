@@ -11,7 +11,7 @@ pipeline {
                 sh 'npm install'
 
                 // Build your code and create a build artifact
-                sh 'npm run build'
+                //sh 'npm run build'
             }
         }
         stage('Test') {
