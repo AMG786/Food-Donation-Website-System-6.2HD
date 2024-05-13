@@ -14,6 +14,8 @@ pipeline {
         stage('Test') {
             steps {
                 // Placeholder steps for Test stage
+                sh 'npm config set user 0'
+                sh 'npm config set unsafe-perm true'
                 sh 'npm test'
             }
         }
